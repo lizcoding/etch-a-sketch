@@ -31,6 +31,26 @@ h1 {
     min-height: 512px;
     border: 1px solid black;
 }
+.square {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.permahover {
+    background-color: lightpink;
+}
+
+.rainbow {
+    background-color: lightgreen;
+}
+
+.eraser {
+    background-color: white;
+}
+
+button.active {
+    background-color: lightskyblue;
+}
 
 .control-panel {
     display: flex;
