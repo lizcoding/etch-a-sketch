@@ -1,0 +1,40 @@
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-display {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#etch-grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    min-width: 512px;
+    min-height: 512px;
+    border: 1px solid black;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
