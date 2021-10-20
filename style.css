@@ -6,7 +6,7 @@
 .header {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 h1 {
@@ -19,7 +19,8 @@ h1 {
 .center-display {
     display: flex;
     align-items: stretch;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
     padding: 20px;
 }
 
@@ -36,6 +37,33 @@ h1 {
     background-color: white;
 }
 
+input[type=color] {
+    align-self: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+}
+
+#color-pick:hover {
+    height: 110%;
+    width: 110%;
+}
+
 .permahover {
     background-color: lightpink;
 }
@@ -48,8 +76,31 @@ h1 {
     background-color: white;
 }
 
-button.active {
-    background-color: lightskyblue;
+button {
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;
+}
+
+button#clear:hover {
+    background-color: lightgray;
+}
+
+button#color.active,
+button#color:hover {
+    background-color: #b5d8ff;
+}
+
+button#rainbow.active,
+button#rainbow:hover {
+    background:linear-gradient(115deg, #F01000D9 0%, #F44336D9 13%, #FFAE07D9 25%, 
+        #F0D226D9 31%, #CDDC1BD9 36%, #6DD200D9 45%, #43C87BD9 54%, #00B5B7D9 61%,
+        #1C90E3D9 68%, #2853D2D9 77%, #4426ADD9 90%, #2E007BD9 100%);
+}
+
+button#eraser.active,
+button#eraser:hover {
+    background-color: pink;
 }
 
 .control-panel {
@@ -57,4 +108,11 @@ button.active {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
 }
