@@ -35,7 +35,18 @@ let rainbow = getRainbowColor();
 let currentColor = colorPicker.value;
 
 colorPicker.oninput = function() {
-    colorButton.style.backgroundColor = colorPicker.value;
+    if (colorButton.classList.contains('active')) {
+        colorButton.style.backgroundColor = colorPicker.value;
+    }
+}
+
+function addColorButtonHover() {
+    colorButton.addEventListener('mouseover', function() {
+        colorButton.style.backgroundColor = colorPicker.value;
+    });
+    colorButton.addEventListener('mouseout', function() {
+        colorButton.style.backgroundColor = eraser;
+    });
 }
  
 function clearAll() {
@@ -63,11 +74,15 @@ function deactivateButtons(e) {
     }
     if (colorButton.classList.contains('active')) {
         colorButton.classList.remove('active');
+        colorButton.style.backgroundColor = eraser;
     }
     if (eraserButton.classList.contains('active')) {
         eraserButton.classList.remove('active');
     }
-    e.target.classList.add('active');
+    e.target.classList.add('active')
+    if (colorButton.classList.contains('active')) {
+        colorButton.style.backgroundColor = colorPicker.value;
+    }
 }
 
 function adjustListeners() {
@@ -134,3 +149,4 @@ clearButton.addEventListener('click', clearAll);
 colorButton.addEventListener('click', deactivateButtons);
 rainbowButton.addEventListener('click', deactivateButtons);
 eraserButton.addEventListener('click', deactivateButtons);
+addColorButtonHover();
